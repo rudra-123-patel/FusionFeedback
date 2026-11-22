@@ -30,7 +30,7 @@ export default function Navbar() {
             className="text-sm hover:text-primary flex items-center gap-1"
           >
             <MessageSquare className="h-4 w-4" />
-            Roadmap
+            Feedback
           </Link>
         </div>
         <div className="flex items-center gap-4">
