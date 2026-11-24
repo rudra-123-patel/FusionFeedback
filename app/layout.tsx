@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 
 import Footer from "@/components/footer";
 import ThemeProvider from "@/components/theme-provider";
+import { syncCurrentUser } from "@/lib/sync-user";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
     "App foe public to vote and give feedback on ideas, features, and products.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  await syncCurrentUser();
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning className="">
